@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Po-kém-pô</title>
+
+    <!--- Main & Reset Styles --->
+
+    <link rel="stylesheet" href="./src/style/reset.css" >
+    <link rel="stylesheet" href="./src/style/main.css">
+
+    <!--- RPGUI Styles --->
+
+    <link href="./src/style/_containers_and_frames.css" rel="stylesheet" type="text/css">
+    <link href="./src/style/_button.css" rel="stylesheet" type="text/css">
+    <link href="./src/style/_cursor.css" rel="stylesheet" type="text/css">
+
+    <!--- Fonts --->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+
 </head>
 <body>
     
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/poke-throw.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <div class="framed-golden container__left">
+
+            <div class="score_box frame">
+                <span id="score_points">Win : 0 | Lose: 0</span>
+            </div>
+            <div class="menu_avatar">
+                <img id="card-image">
+            </div>
+            <div class="card_details frame">
+                <p id="card-name">Poke-name</p>
+                <p id="card-type">poke-type</p>
+            </div>
+        </div>
+        
+        <div class="container__right">
+            <div class="card-box__container"></div>
+        </div>
+    </div>
+
+    <script src="./src/scripts/engine.js" defer></script>
 </body>
 </html>
