@@ -5,11 +5,12 @@
     height: 100vh;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    margin-left: 35%;
+    justify-content: left;
 }
 
 .bg-video .video {
-    height: 100vh;
+    height: 110vh;
     z-index: -2;
 }
 
@@ -22,8 +23,8 @@
     width: 100vw;
     background: linear-gradient(90deg,
     rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.7) 50%,
-    rgba(0, 0, 0, 0.9) 100%
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 1) 100%
     );
 }
 
@@ -69,4 +70,38 @@
 
 #card-type {
     font-size: 1rem;
+}
+
+.container__right {
+    width: 65%;
+
+}
+
+.cardbox__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.3rem;
+}
+
+.card-versus {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.2rem;
+    height: 300px;
+}
+
+.versus-top, .versus-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.versus-bottom {
+    margin-top: 1rem;
+}
+
+#next-duel {
+    display: none;
 }
