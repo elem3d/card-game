@@ -141,8 +141,8 @@ async function setCardsInField(cardId) {
     state.fieldCards.player.style.display = "block";
     state.fieldCards.computer.style.display = "block";
 
-    state.fieldCards.player.src = cardData[cardId].img;
-    state.fieldCards.computer.src = cardData[computerCardId].img;
+    state.fieldCards.player.src = cardData[cardId].pokemon;
+    state.fieldCards.computer.src = cardData[computerCardId].pokemon;
 
     let duelResults = await checkDuelResults(cardId, computerCardId);
 

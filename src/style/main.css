@@ -122,14 +122,14 @@
     width: 8rem;
     border: 1px solid #fff;
     border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 img#player-field-card, img#computer-field-card {
-    height: inherit;
-    padding: 2px;
-    width: inherit;
-    border: 1px solid #0000;
-    border-radius: inherit;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #00000000;
+    
 }
 
 img#computer-field-card {
