@@ -88,9 +88,10 @@
 .card-versus__container {
     display: flex;
     flex-direction: column;
-    padding-top: 0.2rem;
+    padding-top: 0.5rem;
     height: 300px;
-    margin: 1rem;
+    justify-items: center;
+    align-content: center;
 }
 
 .versus-top, .versus-bottom {
@@ -100,7 +101,7 @@
 }
 
 .versus-bottom {
-    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 #next-duel {
@@ -161,4 +162,8 @@ img#computer-field-card {
 
 #card-image {
    height: 40vh;
+}
+
+.debug {
+    border: 1px solid blue;
 }

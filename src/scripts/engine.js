@@ -31,24 +31,74 @@ const cardData = [
         name: 'Bulbassaur',
         type: 'Grass',
         img: `${pathImages}Bulbasaur.jpeg`,
-        winOf: [1],
-        loseOf: [2],
+        pokemon: `${pathImages}/pokemon/bulbassaur.png`,
+        winOf: [1, 6],
+        loseOf: [2, 3, 7],
     },
     {
         id: 1,
         name: 'Squirtle',
         type: 'Water',
         img: `${pathImages}Squirtle.jpeg`,
-        winOf: [2],
-        loseOf: [0],
+        pokemon: `${pathImages}/pokemon/squirtle.png`,
+        winOf: [2, 7],
+        loseOf: [0, 5, 3],
     },
     {
         id: 2,
         name: 'Charmander',
         type: 'Fire',
         img: `${pathImages}Charmander.jpeg`,
-        winOf: [0],
-        loseOf: [1],
+        pokemon: `${pathImages}/pokemon/charmander.png`,
+        winOf: [0, 5],
+        loseOf: [1, 6, 3],
+    },
+    {
+        id: 3,
+        name: 'Snorlax',
+        type: 'Sleep',
+        img: `${pathImages}Snorlax.jpeg`,
+        pokemon: `${pathImages}/pokemon/snorlax.png`,
+        winOf: [0, 1, 2, 5, 6, 7],
+        loseOf: [4],
+    },
+    {
+        id: 4,
+        name: 'Eevee',
+        type: 'Normal',
+        img: `${pathImages}Eevee.jpeg`,
+        pokemon: `${pathImages}/pokemon/eevee.png`,
+        winOf: [3, 5, 6, 7],
+        loseOf: [0, 1, 2],
+        evolution: [
+            {
+                id: 5,
+                name: 'Leafeon',
+                type: 'Grass',
+                img: `${pathImages}Leafeon.jpeg`,
+                pokemon: `${pathImages}/pokemon/leafeon.png`,
+                winOf: [1, 6],
+                loseOf: [2, 3, 7],
+            },
+            {
+                id: 6,
+                name: 'Vaporeon',
+                type: 'Water',
+                img: `${pathImages}Vaporeon.jpeg`,
+                pokemon: `${pathImages}/pokemon/vaporeon.png`,
+                winOf: [2, 7],
+                loseOf: [0, 5, 3],
+            },
+            {
+                id: 7,
+                name: 'Flareon',
+                type: 'Fire',
+                img: `${pathImages}Flareon.jpeg`,
+                pokemon: `${pathImages}/pokemon/flareon.png`,
+                winOf: [0, 5],
+                loseOf: [1, 6, 3],
+            },
+        ]
     },
 ]
 
@@ -69,7 +119,11 @@ async function createCardImage(IdCard, fieldSide) {
 
         cardImage.addEventListener('mouseover', () => {
             drawSelectedCard(IdCard);
-        })
+        });
+        
+        cardImage.addEventListener('mouseleave', () => {
+            removeCardInfo()
+        });
 
         cardImage.addEventListener("click", ()=> {
             setCardsInField(cardImage.getAttribute("data-id"))
@@ -139,6 +193,12 @@ async function drawSelectedCard(id) {
     state.cardSprites.type.innerText = "Atribute : " + cardData[id].type;
 }
 
+async function removeCardInfo() {
+    state.cardSprites.avatar.src = "";
+    state.cardSprites.name.innerText = "";
+    state.cardSprites.type.innerText = "Select a Card";
+}
+
 async function drawCards(cardNum, fieldSide) {
     for(let i = 0; i < cardNum; i++) {
         const randomIdCard = await getRandomCardId();
@@ -150,6 +210,8 @@ async function drawCards(cardNum, fieldSide) {
 
 async function resetDuel() {
     state.cardSprites.avatar.src = "";
+    state.cardSprites.name.innerText = "";
+    state.cardSprites.type.innerText = "Select a Card";
     state.actions.button.style.display = "none";
 
     state.fieldCards.player.style.display = "none";
@@ -158,8 +220,9 @@ async function resetDuel() {
     init();
 }
 
+
 async function playAudio(status) {
-    const audio = new Audio(`src/assets/audio/${status}.mp3`);
+    const audio = new Audio(`src/assets/audio/${status}.WAV`);
     audio.play();
 }
 
