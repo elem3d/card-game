@@ -1,3 +1,11 @@
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: " + (e.pageY - 40) + "px; left: " + (e.pageX - 20) + "px;")
+})
+
+
+
 const state = {
     score: {
         playerScore: 0,
@@ -32,7 +40,7 @@ const cardData = [
         type: 'Grass',
         img: `${pathImages}Bulbasaur.jpeg`,
         pokemon: `${pathImages}/pokemon/bulbassaur.png`,
-        winOf: [1, 6],
+        winOf: [1, 6, 4],
         loseOf: [2, 3, 7],
     },
     {
@@ -41,7 +49,7 @@ const cardData = [
         type: 'Water',
         img: `${pathImages}Squirtle.jpeg`,
         pokemon: `${pathImages}/pokemon/squirtle.png`,
-        winOf: [2, 7],
+        winOf: [2, 7, 4],
         loseOf: [0, 5, 3],
     },
     {
@@ -50,7 +58,7 @@ const cardData = [
         type: 'Fire',
         img: `${pathImages}Charmander.jpeg`,
         pokemon: `${pathImages}/pokemon/charmander.png`,
-        winOf: [0, 5],
+        winOf: [0, 5, 4],
         loseOf: [1, 6, 3],
     },
     {
@@ -229,6 +237,10 @@ async function playAudio(status) {
 function init() {
     drawCards(5, state.playerSides.player1);
     drawCards(5, state.playerSides.computer);
+
+    const bgm = document.getElementById("bgm");
+
+    bgm.play();
 }
 
 init();
