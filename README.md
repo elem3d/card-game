@@ -5,4 +5,13 @@
 - Play against computer;
 - Five different Pokemons to choose
   
-[Click here to play Po-Kém-Pô!](https://elem3d.github.io/card-game/)
+Download this repository, unzip and open "index" to play!
+
+## Rules:
+- You will have 5 random pokemon cards from witch to choose your pokemon for each battle
+- There are 5 pokemon types: Water, Grass, Fire, Sleep and Normal.
+    - water wins fire,
+    - fire wins grass,
+    - grass wins water,
+    - normal wins sleep but looses form water, fire and grass,
+    - sleep wins water, fire and grass but looses from normal.      
